@@ -1,0 +1,144 @@
+.Navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+
+	width: 100%;
+	padding: 1rem 0;
+	box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.Navbar .Container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.Navbar__Logo {
+	position: relative;
+
+	padding: 0.5rem 1rem;
+	padding-left: 2rem;
+	border-radius: 5rem;
+	box-shadow: inset 2px -2px 5px rgba(0, 0, 0, 0.3), inset -2px 2px 5px rgba(0, 0, 0, 0.3);
+	color: var(--dark);
+
+	display: flex;
+	align-items: center;
+}
+
+.Navbar__Logo::before {
+	content: "";
+	width: 15px;
+	height: 15px;
+
+	position: absolute;
+	top: 50%;
+	left: 0.5rem;
+	transform: translateY(-50%);
+
+	border-radius: 50%;
+	background-color: var(--green);
+}
+
+.Navbar__Toggler {
+	text-decoration: none;
+	color: var(--dark);
+}
+
+.Navbar__NavItems {
+	width: 100vw;
+	height: 0;
+	overflow: hidden;
+	transition: 0.25s;
+}
+
+.Navbar__NavItems.Navbar__NavItems--Open {
+	height: min-content;
+}
+
+.Navbar__NavItem:first-child {
+	margin-top: 1rem;
+}
+
+.Navbar__NavItem {
+	display: block;
+	padding: 0.5rem 0;
+
+	text-decoration: none;
+	text-transform: uppercase;
+	color: var(--dark);
+	font-size: calc(var(--font-size) - 1px);
+
+	position: relative;
+	transition: 0.25s;
+}
+
+.Navbar__NavItem::before {
+	content: "";
+
+	position: absolute;
+	top: 90%;
+	left: 0;
+
+	height: 2px;
+	width: 0;
+	background-color: var(--green);
+	transition: 0.25s;
+}
+
+.Navbar__NavItem:not(:last-child):hover::before {
+	width: 40%;
+}
+
+
+@media (min-width: 576px) {
+	.Navbar__Logo {
+		box-shadow: inset 2px -2px 5px rgba(0, 0, 0, 0.15), inset -2px 2px 5px rgba(0, 0, 0, 0.15);
+	}
+
+	.Navbar__NavItems {
+		width: auto;
+		height: auto;
+		display: flex;
+	}
+
+	.Navbar__NavItem {
+		font-size: calc(var(--font-size) - 2px);
+	}
+
+	.Navbar__NavItem::before {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.Navbar__NavItem:first-child {
+		margin: 0;
+	}
+
+	.Navbar__NavItem:last-child {
+		border-radius: 5rem;
+		background-color: var(--green);
+		border: 1px solid var(--green);
+		padding: 0.5rem 1.5rem;
+
+		color: var(--light);
+		font-weight: 550;
+		transition: 0.25s;
+	}
+
+	.Navbar__NavItem:last-child:hover {
+		background-color: var(--light);
+		color: var(--green);
+	}
+
+	.Navbar__NavItem + .Navbar__NavItem {
+		margin-left: 1.5rem;
+	}
+
+	.Navbar__Toggler {
+		display: none;
+	}
+}

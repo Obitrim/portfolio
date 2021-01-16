@@ -1,0 +1,53 @@
+.Banner {
+	text-align: center;
+	color: var(--light);
+	padding: var(--v-whitespace) 0;
+}
+
+.Banner .Container {
+	max-width: 500px;
+}
+
+.Banner__Title,
+.Banner__InfoText {
+ margin: 0;
+}
+
+.Banner__Title {
+	font-size: calc(var(--font-size) * 3);
+	color: var(--green);
+	margin: 0.5rem 0;
+}
+
+.Banner__Name {
+	color: var(--green);
+}
+
+.Banner__InfoText {
+	line-height: 140%;
+}
+
+.Banner__DownloadBtn {
+	display: inline-block;
+	border-radius: 5rem;
+	background-color: var(--green);
+	border: 1px solid var(--green);
+	padding: 0.5rem 1.5rem;
+	margin-top: 1.5rem;
+
+	text-decoration: none;
+	color: var(--dark);
+	font-weight: 550;
+	transition: 0.25s;
+}
+
+.Banner__DownloadBtn:hover {
+	background-color: transparent;
+	color: var(--green);
+}
+
+@media (min-width: 992px) {
+	.Banner__Title {
+		font-size: calc(var(--font-size) * 4);
+	}
+}

@@ -1,0 +1,183 @@
+.ProjectCard {
+	position: relative;
+	margin: 4rem 0;
+}
+
+.ProjectCard:last-child {
+	margin-bottom: 0;
+}
+
+.ProjectCard__BrowserScreen {
+	position: relative;
+	border-radius: 5px 5px 0 0;
+	overflow-y: hidden;
+	box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+
+	--address-bar-height: 20px;
+	--dot-size: 10px;
+}
+
+.ProjectCard.AlignRight .ProjectCard__BrowserScreen {
+	box-shadow: 4px -4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.ProjectCard__BrowserScreen::before {
+	content: '';
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+
+	width: 100%;
+	height: var(--address-bar-height);
+	background-color: silver;
+}
+
+.ProjectCard__BrowserScreen .Dot {
+	position: absolute;
+	top: calc((var(--address-bar-height) - var(--dot-size)) / 2);
+	left: 2rem;
+	z-index: 99;
+
+	display: inline-block;
+	width: var(--dot-size);
+	height: var(--dot-size);
+	border-radius: 50%;
+	background-color: orange;
+}
+
+.ProjectCard__BrowserScreen .Dot::before,
+.ProjectCard__BrowserScreen .Dot::after {
+	content: "";
+	position: absolute;
+	top: 0;
+
+	width: var(--dot-size);
+	height: var(--dot-size);
+	border-radius: 50%;
+}
+
+.ProjectCard__BrowserScreen .Dot::before {
+	left: -1rem;
+	background-color: red;
+}
+
+.ProjectCard__BrowserScreen .Dot::after {
+	right: -1rem;
+	background-color: green;
+}
+
+.ProjectCard__Img {
+	display: block;
+	width: 100%;
+	height: auto;
+	min-height: 200px;
+	object-fit: cover;
+	margin-top: var(--address-bar-height);
+}
+
+.ProjectCard__Details {
+	background-color: var(--dark);
+	color: var(--light);
+	padding: 1rem;
+	margin-top: 1rem;
+
+	position: relative;
+}
+
+.ProjectCard__Details::before {
+	content: "";
+
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+
+	border: 10px solid transparent;
+	border-bottom-color: var(--dark);
+}
+
+.ProjectCard__Name {
+	color: var(--green);
+	position: relative;
+}
+
+.ProjectCard__Name::before {
+	content: "";
+
+	position: absolute;
+	top: 110%;
+	left: 0;
+
+	width: 10%;
+	height: 4px;
+	background-color: var(--light);
+	border-radius: 1rem;
+}
+
+.ProjectCard__Desc {
+	margin: 1.5rem 0 !important;
+}
+
+.ProjectCard__HashTag {
+	color: rgba(255, 255, 255, 0.5);
+	display: inline-block;
+	margin-top: 0.3rem;
+}
+.ProjectCard__HashTag + .ProjectCard__HashTag {
+	margin-left: 0.5rem;
+}
+
+.ProjectCard__PreviewBtn {
+	text-decoration: none;
+	color: var(--dark);
+}
+
+.ProjectCard__PreviewBtn:hover {
+	background-color: transparent;
+}
+
+@media (min-width: 768px) {
+
+	.ProjectCard__Img {
+		min-height: 350px;
+	}
+
+	.ProjectCard__Details {
+		position: absolute;
+		top: 35%;
+		right: 0;
+		max-width: 400px;
+		margin-top: none;
+	}
+
+	.ProjectCard__Details::before {
+		border: none;
+		height: 60px;
+		width: 170px;
+		border-right: 2px dotted var(--dark);
+		border-top: 2px dotted var(--dark);
+	}
+
+	.ProjectCard.AlignRight .ProjectCard__Details::before {
+		border-right: 0;
+		border-left: 2px dotted var(--dark);
+	}
+
+	.ProjectCard__BrowserScreen {
+		--address-bar-height: 40px;
+
+		width: 70%;
+		margin-right: auto;
+	}
+
+	.ProjectCard.AlignRight .ProjectCard__BrowserScreen {
+		margin-right: 0;
+		margin-left: auto;
+	}
+
+	.ProjectCard.AlignRight .ProjectCard__Details {
+		left: 0 !important;
+	}
+}
