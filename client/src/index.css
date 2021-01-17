@@ -54,6 +54,7 @@ body {
 }
 
 .BaseButton:hover {
+	cursor: pointer;
 	background-color: var(--light);
 	color: var(--green);
 }
