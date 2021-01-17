@@ -1,0 +1,105 @@
+.PageSection__About {
+	overflow: hidden;
+}
+
+.PageSection__About .Container {
+	padding: 0 !important;
+}
+
+.About__Section__Heading {
+	margin-top: 0 !important;
+	text-transform: uppercase;
+	padding: 0.3rem 0;
+	padding-left: 1em;
+
+	position: relative;
+}
+
+.About__Section__Heading::before {
+	content: "";
+	height: 100%;
+	width: 3px;
+	background-color: currentColor;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9;
+}
+
+.About__Section {
+	position: relative;
+	color: var(--light);
+}
+
+.About__Section > * {
+	position: relative;
+	z-index: 99;
+} 
+
+.About__Section p {
+	font-size: calc(var(--font-size) - 1px);
+	line-height: 150%;
+}
+
+.About__Section::before {
+	content: '';
+	height: 200%;
+	width: 700px;
+
+	position: absolute;
+	bottom: 0;
+	z-index: 9;
+}
+
+.About__Section--Bio {
+	grid-area: bio;
+	padding: 4em 2.5em;
+	padding-left: 0;
+}
+
+.About__Section--SocialMedia,
+.About__Section--Skills {
+	color: var(--dark);
+}
+
+.About__Section--Skills {
+	padding: 4em 2.5em;
+	padding-right: 0;
+}
+
+.About__Section--Skills::before {
+	background-color: var(--green);
+	left: 0;
+}
+
+.About__Section--SocialMedia {
+	grid-area: socialMedia;
+	padding: 4em 2.5em 0;
+	padding-left: 0;
+}
+
+.About__Section--SocialMedia::before {
+	background-color: var(--green);
+	top: 0;
+	right: 0;
+}
+
+.About__Section--HowIStarted {
+	grid-area: howIStarted;
+	padding: 4em 2.5em;
+	padding-right: 0;
+}
+
+@media (min-width: 992px) {
+	.About {
+		display: grid;
+		grid-template-areas: 
+			'bio         skills'
+			'socialMedia howIStarted';
+	}
+
+	.PageSection__About .Container {
+		padding: 1rem !important;
+	}	
+}
