@@ -1,11 +1,8 @@
-#my-works {
-	padding: var(--v-whitespace) 0;
-}
-
 .BaseButton--SeeAllBtn {
 	display: block;
 	margin: 0 auto;
 	padding: 0.8em 2.5em;
+	box-shadow: 4px 4px 10px #dedede;
 
 	font-size: calc(var(--font-size) + 2px);
 }

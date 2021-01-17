@@ -1,7 +1,6 @@
 .Banner {
 	text-align: center;
 	color: var(--light);
-	padding: var(--v-whitespace) 0;
 }
 
 .Banner .Container {
