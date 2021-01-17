@@ -6,7 +6,7 @@ import ProjectCard from '../ProjectCard';
 
 const Index = (props) => {
   return (
-    <PageSection id="my-works">
+    <PageSection id="my-works" vWhitespace={true}>
     	<h2>My works</h2>
     	<p>Over the course of time, I have worked on medium to large-scale projects. Samples are listed below.</p>
     	<ProjectCard 

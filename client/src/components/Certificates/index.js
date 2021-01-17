@@ -3,7 +3,7 @@ import PageSection from '../PageSection';
 
 const Index = (props) => {
   return (
-    <PageSection>
+    <PageSection id="certificates" vWhitespace={true}>
     	Certificates
     </PageSection>
   )

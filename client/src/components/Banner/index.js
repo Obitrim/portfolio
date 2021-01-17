@@ -4,7 +4,7 @@ import PageSection from '../PageSection';
 
 const Index = (props) => {
   return (
-    <PageSection bgColor="var(--dark)" className="Banner">
+    <PageSection bgColor="var(--dark)" className="Banner" vWhitespace={true}>
 		<p className="Banner__InfoText">Hi, <strong className="Banner__Name">Paul Obitrim</strong> here</p>
 		<h1 className="Banner__Title">Web Developer</h1>
 		<p className="Banner__InfoText">
