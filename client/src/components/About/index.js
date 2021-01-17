@@ -1,7 +1,7 @@
 import React from 'react';
 import PageSection from '../PageSection';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation, Pagination } from 'swiper';
+// import SwiperCore, { Navigation, Pagination } from 'swiper';
 
 // Import Swiper styles
 // import 'swiper/swiper.scss';
@@ -9,11 +9,12 @@ import SwiperCore, { Navigation, Pagination } from 'swiper';
 // import 'swiper/components/pagination/pagination.scss';
 
 // install Swiper components
-SwiperCore.use([Navigation, Pagination]);
+// SwiperCore.use([Navigation, Pagination]);
+// import 'swiper/swiper.scss';
 
 const Index = (props) => {
   return (
-    <PageSection id="about" className="BgDark">
+    <PageSection id="about" className="BgDark" vWhitespace={true}>
     	 <Swiper
 	      spaceBetween={50}
 	      slidesPerView={3}
